@@ -1,0 +1,50 @@
+﻿<Window x:Class="lab3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="0,0,-6.4,1">
+        <ComboBox Name="DevicesComboBox" HorizontalAlignment="Left" Height="117" Margin="10,47,0,0" VerticalAlignment="Top" Width="774" SelectionChanged="DevicesComboBox_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Name: " />
+                        <TextBlock Text="{Binding DeviceName}" />
+                        <TextBlock Text=" Address: " />
+                        <TextBlock Text="{Binding DeviceAddress}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Name="AdaptersComboBox" HorizontalAlignment="Left" Height="111" Margin="9,210,0,0" VerticalAlignment="Top" Width="775" SelectionChanged="AdaptersComboBox_SelectionChanged" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Name: " />
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Devices" HorizontalAlignment="Left" Height="32" Margin="16,10,0,0" VerticalAlignment="Top" Width="301"/>
+        <Label Content="Adapters" HorizontalAlignment="Left" Height="36" Margin="16,169,0,0" VerticalAlignment="Top" Width="134"/>
+        <Button Name="SearchDevicesButton" Content="Search Devices" HorizontalAlignment="Left" Height="83" Margin="10,326,0,0" VerticalAlignment="Top" Width="170" Click="SearchDevicesButton_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.453"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Name="ConnectButton"  Content="Connect" HorizontalAlignment="Left" Height="83" Margin="200,326,0,0" VerticalAlignment="Top" Width="91" Click="ConnectButton_Click"/>
+        <Button IsEnabled="False" Name="DisconnectButton" Content="Disconnect" HorizontalAlignment="Left" Height="83" Margin="312,326,0,0" VerticalAlignment="Top" Width="103" Click="DisconnectButton_Click"/>
+        <Button IsEnabled="False" Name="SendFileButton" Content="SendFile" HorizontalAlignment="Left" Height="83" Margin="435,326,0,0" VerticalAlignment="Top" Width="195" Click="SendFileButton_Click"/>
+        
+
+    </Grid>
+</Window>
