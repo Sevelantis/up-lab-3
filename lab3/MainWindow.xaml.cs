@@ -140,7 +140,7 @@ namespace lab3
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Show User Numeric Comparison");
+                        MessageBox.Show("Show User Numeric Comparison");
                         if (MessageBox.Show(e.NumberOrPasskeyAsString, "Pair Device", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                         {
                             e.Confirm = true;
